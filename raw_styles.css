@@ -1,0 +1,64 @@
+/* Ensure the variables are set: --shogi-diag-board-color, --shogi-diag-hand-background-color */
+.shogi_diag {
+  --gote-color: #ffffff;
+  --sente-color: #000000;
+  --square-height: 36px;
+  --square-width: 33px;
+  display: flex;
+  position: inline-flex;
+}
+
+.shogi_diag_board {
+  background-color: var(--shogi-diag-board-color);
+  background-image: "SVG-REPLACE ./assets/boards/shogiPlain.svg";
+  height: calc(var(--square-height) * 9);
+  position: relative;
+  width: calc(var(--square-width) * 9);
+}
+
+.shogi_diag_square_container {
+  align-items: center;
+  display: flex;
+  height: var(--square-height);
+  justify-content: center;
+  position: absolute;
+  width: var(--square-width);
+}
+
+.shogi_diag_piece {
+  align-items: center;
+  background-size: contain;
+  justify-content: center;
+  height: 33px;
+  width: 33px;
+}
+
+.shogi_diag_hand {
+  align-content: center;
+  background-color: var(--shogi-diag-hand-background-color);
+  color: #000000;
+  display: flex;
+  padding: 0px 3px;
+
+  &.shogi_diag_left_hand {
+    flex-direction: column-reverse;
+    justify-content: start;
+  }
+
+  &.shogi_diag_right_hand {
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .shogi_diag_piece_and_amount {
+    align-items: center;
+    display: flex;
+    padding: 1px;
+    width: 100%;
+  }
+
+  .shogi_diag_piece {
+    height: 30px;
+    width: 30px;
+  }
+}

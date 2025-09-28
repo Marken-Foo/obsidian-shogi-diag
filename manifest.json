@@ -1,0 +1,9 @@
+{
+	"id": "shogi-diag",
+	"name": "Shogi SFEN diagrams",
+	"version": "0.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "Display shogi diagrams from SFEN in your notes.",
+	"author": "Marken Foo",
+	"isDesktopOnly": false
+}

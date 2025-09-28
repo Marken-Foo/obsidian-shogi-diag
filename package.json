@@ -1,0 +1,19 @@
+{
+	"name": "shogi-diag",
+	"version": "0.0.1",
+	"description": "Shogi SFEN diagram viewer for Obsidian",
+	"main": "main.ts",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "uv run put_svg_in_css.py && type kanji_light.css >> styles.css && tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+	},
+	"author": "Marken Foo",
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"builtin-modules": "5.0.0",
+		"esbuild": "0.25.9",
+		"obsidian": "1.8.7",
+		"tslib": "2.8.1",
+		"typescript": "5.9.2"
+	}
+}
