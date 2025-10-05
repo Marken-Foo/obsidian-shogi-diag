@@ -2,10 +2,32 @@
 .shogi_diag {
   --gote-color: #ffffff;
   --sente-color: #000000;
-  --square-height: 36px;
-  --square-width: 33px;
   display: flex;
   position: inline-flex;
+}
+
+@media (min-width: calc((9 + 4)*33px)) {
+  .shogi_diag {
+    --square-height: 36px;
+    --square-width: 33px;
+  }
+
+  .shogi_diag_hand .shogi_diag_piece {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width: calc((9 + 4)*33px)) {
+  .shogi_diag {
+    --square-height: 24px;
+    --square-width: 22px;
+  }
+
+  .shogi_diag_hand .shogi_diag_piece {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 .shogi_diag_board {
@@ -29,8 +51,9 @@
   align-items: center;
   background-size: contain;
   justify-content: center;
-  height: 33px;
-  width: 33px;
+  /* This is a square, so use the smaller dimension */
+  height: var(--square-width);
+  width: var(--square-width);
 }
 
 .shogi_diag_hand {
@@ -55,10 +78,5 @@
     display: flex;
     padding: 1px;
     width: 100%;
-  }
-
-  .shogi_diag_piece {
-    height: 30px;
-    width: 30px;
   }
 }
