@@ -29,11 +29,11 @@ export function shogiDiagHandler(
 	}
 
 	const diagram = el.createDiv({ cls: "shogi_diag" });
-	const leftHandContents = flip ? sfenParser.goteHand : sfenParser.senteHand;
+	const leftHandContents = flip ? sfenParser.senteHand : sfenParser.goteHand;
 	const leftHand = createHand(diagram, leftHandContents, true);
 	leftHand.addClass("shogi_diag_left_hand");
 	const board = diagram.createDiv({ cls: "shogi_diag_board" });
-	const rightHandContents = flip ? sfenParser.senteHand : sfenParser.goteHand;
+	const rightHandContents = flip ? sfenParser.goteHand : sfenParser.senteHand;
 	const rightHand = createHand(diagram, rightHandContents, false);
 	rightHand.addClass("shogi_diag_right_hand");
 
