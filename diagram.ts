@@ -56,10 +56,15 @@ function createHand(
 	const hand = parent.createDiv({ cls: "shogi_diag_hand" });
 	const handPieces: PieceType[] = ["HI", "KA", "KI", "GI", "KE", "KY", "FU"];
 	for (const pieceType of handPieces) {
-		const thing = hand.createDiv({ cls: ["shogi_diag_piece_and_amount"] });
-		createPiece(thing, pieceType, isUpsideDown);
 		const amount = contents.get(pieceType) ?? 0;
-		thing.createDiv({ text: amount.toString(), cls: ["shogi_diag_amount"] });
+		if (amount > 0) {
+			const thing = hand.createDiv({ cls: ["shogi_diag_piece_and_amount"] });
+			createPiece(thing, pieceType, isUpsideDown);
+			thing.createDiv({ text: amount.toString(), cls: ["shogi_diag_amount"] });
+		}
+	}
+	if (handPieces.every((pieceType) => (contents.get(pieceType) ?? 0) === 0)) {
+		hand.createDiv({ text: "なし" });
 	}
 	return hand;
 }
