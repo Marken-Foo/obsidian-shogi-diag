@@ -194,7 +194,7 @@ export class SfenParser {
 		if (pieceType === null) {
 			return null;
 		}
-		const side = isAsciiUppercase(pieceStr) ? "sente" : "gote";
+		const side = isAsciiUppercase(pieceStr.substring(1)) ? "sente" : "gote";
 		this.input.advanceN(2);
 		return { side, pieceType };
 	}
